@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.mvvm.basket.R
 import com.mvvm.basket.databinding.FragmentTabOneBinding
+import com.mvvm.basket.ui.list.db.Product
 
 
 
@@ -16,27 +18,31 @@ class TabOneFragment : Fragment() {
     private val binding get() = _binding!!
 
 
-    private val product = mutableListOf<ProductModel>()
+
+    private val product = mutableListOf<Product>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = DataBindingUtil.inflate(inflater,R.layout.fragment_tab_one,container,false)
+        _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_tab_one, container, false)
 
+        val adapter = RecyclerAdapter(product)
+        binding.Recycle.adapter = adapter
+        binding.Recycle.layoutManager = LinearLayoutManager(requireContext())
 
-       binding.Recycle.adapter = RecyclerAdapter(product)
-
+        //리스트 추가
         product.apply {
-            add(ProductModel("ㅎㅎㅎㅎ","ㅎㅎㅎㅎㅎ",300))
-            add(ProductModel("asdasd","asdasd",300))
-            add(ProductModel("asdas","asdasd",300))
-            add(ProductModel("asdas","asdas",300))
-            add(ProductModel("asdasdas","asddassad",300))
+            add(Product("아이스크림", "ㅎㅎㅎㅎㅎ", 1500))
+            add(Product("마우스", "asdasd", 20000))
+            add(Product("핸드폰", "asdasd", 500000))
+            add(Product("키보드", "asdas", 45000))
+            add(Product("스피커", "asddassad", 20000))
         }
 
 
         return binding.root
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

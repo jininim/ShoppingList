@@ -9,9 +9,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 
 import androidx.recyclerview.widget.RecyclerView
+import com.mvvm.basket.ui.list.db.Product
 
 
-class RecyclerAdapter(private val itemList: MutableList<ProductModel>): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+class RecyclerAdapter(private val itemList: MutableList<Product>): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     // (1) 아이템 레이아웃과 결합
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recycler, parent, false)
