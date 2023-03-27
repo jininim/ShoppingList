@@ -3,4 +3,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_product">항목 추가</string>
+    <string name="delete_product">항목삭제</string>
+    <string name="name">name</string>
+    <string name="place">place</string>
+    <string name="store">store</string>
+    <string name="price">price</string>
 </resources>

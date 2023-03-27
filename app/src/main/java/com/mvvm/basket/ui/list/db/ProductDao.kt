@@ -1,10 +1,8 @@
 package com.mvvm.basket.ui.list.db
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.lifecycle.MutableLiveData
+import androidx.room.*
 
 @Dao
 interface ProductDao {
@@ -12,8 +10,15 @@ interface ProductDao {
     fun getProduct(): LiveData<List<Product>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(product: Product)
+    fun insert(product: Product)
 
+    @Update
+    fun updateProduct(product: Product)
+    //선택한 항목 삭제
+    @Delete
+    fun deleteProduct(product: Product)
+
+    //전체 삭제
     @Query("DELETE FROM product_table")
-    suspend fun deleteAll()
+    fun deleteAll()
 }
