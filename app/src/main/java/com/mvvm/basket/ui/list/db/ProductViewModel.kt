@@ -5,19 +5,27 @@ import android.content.Context
 import android.view.View
 import androidx.lifecycle.*
 import com.mvvm.basket.ui.list.DialogAdd
+
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
 class ProductViewModel(application: Application) : AndroidViewModel(application) {
-
+    //db 데이터
     val readAllData : LiveData<List<Product>>
+    //db 데이터 내 totalPrice
+    val totalPrice : LiveData<Int>
+
+    //db 튜플의 수
+    val count : LiveData<Int>
     private val repository :ProductRepository
 
     init {
         val productDao = ProductRoomDatabase.getDatabase(application).productDao()
         repository = ProductRepository(productDao)
         readAllData = repository.allProduct
+        totalPrice = repository.totalPrice
+        count = repository.count
     }
 
     fun addProduct(product: Product){
@@ -31,10 +39,9 @@ class ProductViewModel(application: Application) : AndroidViewModel(application)
             if(product.check){
                 repository.deleteProduct(product)
             }
-
-
         }
     }
+
 
     fun deleteAllProduct(){
         viewModelScope.launch(Dispatchers.IO) {
@@ -57,8 +64,8 @@ class ProductViewModel(application: Application) : AndroidViewModel(application)
                 addProduct(product)
             }
         })
-
     }
+
 
 
 }

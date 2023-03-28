@@ -1,5 +1,6 @@
 package com.mvvm.basket.ui.list
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -19,6 +20,7 @@ class TabOneFragment : Fragment() {
     private val binding get() = _binding!!
 
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,6 +34,7 @@ class TabOneFragment : Fragment() {
         val adapter = RecyclerAdapter(onClickUpdate = {
             productViewModel.updateProduct(it)
         })
+
         binding.Recycle.adapter = adapter
         binding.Recycle.layoutManager = LinearLayoutManager(requireContext())
 
@@ -42,14 +45,26 @@ class TabOneFragment : Fragment() {
 
             //fabDel 버튼 클릭시 이벤트
             binding.fabDel.setOnClickListener {
-                for (i in products){
-                    if (i.check){
+                for (i in products) {
+                    if (i.check) {
                         productViewModel.deleteProduct(i)
                     }
                 }
             }
 
 
+        })
+
+//        totalPrice 값 변경 시
+        productViewModel.totalPrice.observe(viewLifecycleOwner, Observer {
+            it.let {
+                binding.totalPrice.text = it.toString() + "원"
+            }
+
+        })
+        //count(튜플의 수 ) 변경 시
+        productViewModel.count.observe(viewLifecycleOwner, Observer {
+            binding.count.text = it.toString() + "개"
         })
 
         //fabAdd 버튼 클릭 시

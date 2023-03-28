@@ -8,77 +8,98 @@
     android:layout_marginRight="16dp"
     android:background="@drawable/dialog_background">
 
-    <EditText
-        android:id="@+id/ettName"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ettNameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:autofillHints="name"
-        android:ems="10"
-        android:hint="@string/name"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/ettStore"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:autofillHints="place"
-        android:ems="10"
-        android:hint="@string/store"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ettName" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ettName"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:autofillHints="name"
+            android:ems="10"
+            android:hint="@string/name"
+            android:inputType="textPersonName"
+            android:textAlignment="center" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/ettPrice"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ettStoreLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/price"
-        android:inputType="number"
-        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ettStore" />
+        app:layout_constraintTop_toBottomOf="@+id/ettNameLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ettStore"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+
+            android:autofillHints="place"
+            android:ems="10"
+            android:hint="@string/period"
+            android:inputType="textPersonName"
+            android:textAlignment="center" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ettPriceLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ettStoreLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ettPrice"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/price"
+            android:inputType="number"
+            android:textAlignment="center" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 
     <Button
-        android:id="@+id/btncancle"
+        android:id="@+id/btnCancle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:text="cancle"
+        android:text="@string/cancle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnadd"
-        app:layout_constraintStart_toStartOf="@+id/ettPrice"
-        app:layout_constraintTop_toBottomOf="@+id/ettPrice" />
+        app:layout_constraintEnd_toStartOf="@+id/btnAdd"
+        app:layout_constraintStart_toStartOf="@+id/ettPriceLayout"
+        app:layout_constraintTop_toBottomOf="@+id/ettPriceLayout" />
 
     <Button
-        android:id="@+id/btnadd"
+        android:id="@+id/btnAdd"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:text="Add"
+        android:text="@string/add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/ettPrice"
-        app:layout_constraintStart_toEndOf="@+id/btncancle"
-        app:layout_constraintTop_toBottomOf="@+id/ettPrice" />
+        app:layout_constraintEnd_toEndOf="@+id/ettPriceLayout"
+        app:layout_constraintStart_toEndOf="@+id/btnCancle"
+        app:layout_constraintTop_toBottomOf="@+id/ettPriceLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

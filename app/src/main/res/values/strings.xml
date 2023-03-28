@@ -5,7 +5,9 @@
     <string name="add_product">항목 추가</string>
     <string name="delete_product">항목삭제</string>
     <string name="name">name</string>
-    <string name="place">place</string>
-    <string name="store">store</string>
     <string name="price">price</string>
+    <string name="period">period</string>
+    <string name="deleteAll">deleteAll</string>
+    <string name="cancle">cancle</string>
+    <string name="add">Add</string>
 </resources>

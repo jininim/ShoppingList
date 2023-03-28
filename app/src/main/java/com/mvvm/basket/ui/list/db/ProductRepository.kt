@@ -7,6 +7,8 @@ import androidx.lifecycle.MutableLiveData
 class ProductRepository(private val productDao: ProductDao) {
 
     val allProduct: LiveData<List<Product>> = productDao.getProduct()
+    val totalPrice : LiveData<Int> = productDao.getSumOfPrice()
+    val count : LiveData<Int> = productDao.getCount()
 
     // By default Room runs suspend queries off the main thread, therefore, we don't need to
     // implement anything else to ensure we're not doing long running database work
@@ -18,6 +20,7 @@ class ProductRepository(private val productDao: ProductDao) {
     suspend fun updateProduct(product: Product){
         productDao.updateProduct(product)
     }
+
     suspend fun deleteProduct(product: Product){
         productDao.deleteProduct(product)
     }

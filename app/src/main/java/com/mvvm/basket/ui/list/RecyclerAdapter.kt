@@ -1,7 +1,5 @@
 package com.mvvm.basket.ui.list
 
-import com.mvvm.basket.R
-
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
@@ -9,14 +7,15 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
+import com.mvvm.basket.R
 import com.mvvm.basket.ui.list.db.Product
-import com.mvvm.basket.ui.list.db.ProductViewModel
+import java.text.DecimalFormat
 
 
 class RecyclerAdapter(val onClickUpdate: (product: Product) -> Unit) :
     RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+
     private var itemList = emptyList<Product>()
 
     // (1) 아이템 레이아웃과 결합
@@ -31,13 +30,14 @@ class RecyclerAdapter(val onClickUpdate: (product: Product) -> Unit) :
         return itemList.size
     }
 
-    // (3) View에 내용 입력
+    // (3) View 내용 입력
     @SuppressLint("SetTextI18n", "NotifyDataSetChanged")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val current = itemList[position]
         holder.name.text = current.name
-        holder.place.text = current.place
-        holder.price.text = current.price.toString()
+        holder.place.text = current.period
+        holder.price.text = DecimalFormat("###,###").format(current.price).toString() + "원"
+
         holder.checkBox.isChecked = current.check
         holder.checkBox.setOnClickListener {
             if (!current.check) {
@@ -50,10 +50,12 @@ class RecyclerAdapter(val onClickUpdate: (product: Product) -> Unit) :
         }
 
 
+
     }
 
     // (4) 레이아웃 내 View 연결
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
         val name: TextView = itemView.findViewById(R.id.ProductName)
         val place: TextView = itemView.findViewById(R.id.ProductPlace)
         val price: TextView = itemView.findViewById(R.id.ProductPrice)
