@@ -23,10 +23,35 @@
             android:id="@+id/ettName"
             android:layout_width="300dp"
             android:layout_height="48dp"
+            android:fontFamily="@font/kotra"
             android:autofillHints="name"
             android:ems="10"
             android:hint="@string/name"
             android:inputType="textPersonName"
+            android:textAlignment="center" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ettPriceLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ettNameLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ettPrice"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:fontFamily="@font/kotra"
+            android:ems="10"
+            android:hint="@string/price"
+            android:inputType="number"
             android:textAlignment="center" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -39,39 +64,17 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ettNameLayout">
+        app:layout_constraintTop_toBottomOf="@+id/ettPriceLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/ettStore"
             android:layout_width="300dp"
             android:layout_height="48dp"
-
             android:autofillHints="place"
+            android:fontFamily="@font/kotra"
             android:ems="10"
             android:hint="@string/period"
-            android:inputType="textPersonName"
-            android:textAlignment="center" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ettPriceLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ettStoreLayout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ettPrice"
-            android:layout_width="300dp"
-            android:layout_height="48dp"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/price"
-            android:inputType="number"
+            android:inputType="text"
             android:textAlignment="center" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -84,22 +87,26 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
+        android:fontFamily="@font/kotra"
+        android:backgroundTint="@color/md_theme_light_secondaryContainer"
+
         android:text="@string/cancle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnAdd"
-        app:layout_constraintStart_toStartOf="@+id/ettPriceLayout"
-        app:layout_constraintTop_toBottomOf="@+id/ettPriceLayout" />
+        app:layout_constraintStart_toStartOf="@+id/ettStoreLayout"
+        app:layout_constraintTop_toBottomOf="@+id/ettStoreLayout" />
 
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/kotra"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:text="@string/add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/ettPriceLayout"
+        app:layout_constraintEnd_toEndOf="@+id/ettStoreLayout"
         app:layout_constraintStart_toEndOf="@+id/btnCancle"
-        app:layout_constraintTop_toBottomOf="@+id/ettPriceLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/ettStoreLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

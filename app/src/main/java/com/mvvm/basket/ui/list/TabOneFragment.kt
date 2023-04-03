@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.mvvm.basket.R
 import com.mvvm.basket.databinding.FragmentTabOneBinding
 import com.mvvm.basket.ui.list.db.ProductViewModel
+import java.text.DecimalFormat
 
 
 class TabOneFragment : Fragment() {
@@ -58,7 +59,7 @@ class TabOneFragment : Fragment() {
 //        totalPrice 값 변경 시
         productViewModel.totalPrice.observe(viewLifecycleOwner, Observer {
             it.let {
-                binding.totalPrice.text = it.toString() + "원"
+                binding.totalPrice.text = DecimalFormat("###,###").format(it).toString() + "원"
             }
 
         })
