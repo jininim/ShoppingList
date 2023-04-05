@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        //ViewPager2와 Adapter연결
+        //ViewPager2와 Adapter
         val adapter = ViewPagerAdapter(this)
         binding.Viewpager2.adapter = adapter
 
@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
                 0 -> {
                     tab.text = "구매 목록"
                 }
-                1 -> tab.text = "지출 기록"
             }
         }.attach()
 

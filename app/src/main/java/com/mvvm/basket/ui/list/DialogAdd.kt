@@ -21,9 +21,9 @@ class DialogAdd(
 
     fun showDia(){
         dialog.setContentView(binding.root)
-        // 뒤로가기 버튼 및 화면 밖 터치시 다이어로그 꺼짐
-        dialog.setCancelable(true)
-        dialog.setCanceledOnTouchOutside(true)
+//        // 뒤로가기 버튼 및 화면 밖 터치시 다이어로그 꺼짐 false
+        dialog.setCancelable(false)
+        dialog.setCanceledOnTouchOutside(false)
         // background 투명하게 만듦
         // (중요) Dialog 내부적으로 뒤에 흰 사각형 배경이 존재하므로, 배경을 투명하게 만들지 않으면
         // corner radius 적용이 보이지 않는다.

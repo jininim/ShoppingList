@@ -22,7 +22,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/ettName"
             android:layout_width="300dp"
-            android:layout_height="48dp"
+            android:layout_height="54dp"
             android:fontFamily="@font/kotra"
             android:autofillHints="name"
             android:ems="10"
@@ -47,7 +47,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/ettPrice"
             android:layout_width="300dp"
-            android:layout_height="48dp"
+            android:layout_height="54dp"
             android:fontFamily="@font/kotra"
             android:ems="10"
             android:hint="@string/price"
@@ -69,7 +69,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/ettStore"
             android:layout_width="300dp"
-            android:layout_height="48dp"
+            android:layout_height="54dp"
             android:autofillHints="place"
             android:fontFamily="@font/kotra"
             android:ems="10"
