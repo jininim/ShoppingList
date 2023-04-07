@@ -7,10 +7,5 @@
 [기능]
 * 상품명 , 메모 , 가격을 입력하며 상품 등록 및 삭제 기능을 제공합니다.
 * 사용자가 등록한 상품의 총 개수 , 총 가격을 제공합니다.
-
-[메인화면]
-![main](https://user-images.githubusercontent.com/91578450/230587219-9a045fe2-e5ae-41d7-8232-e68a06555e3d.png)
-[상품 추가]
-![add](https://user-images.githubusercontent.com/91578450/230587243-70a21389-827a-4790-bd63-93866e367e80.png)
-[추가 된 화면]
-![additem](https://user-images.githubusercontent.com/91578450/230587260-96899d90-e712-4626-aeac-42306aa093d6.png)
+[화면]
+![제목 없음](https://user-images.githubusercontent.com/91578450/230588210-9b12aa7f-313c-4a7f-b5db-f09b9b3ea461.png)
